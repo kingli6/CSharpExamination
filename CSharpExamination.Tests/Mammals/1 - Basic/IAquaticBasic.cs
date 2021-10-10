@@ -27,14 +27,14 @@ namespace CSharpExamination.Tests.Mammals
             Assert.IsTrue((aquatics[2] as Mammal).IsAlive);
         }
 
-        //[TestMethod]
-        //public void DivingWithDeadIAquaticThrowsException()
-        //{
-        //    IAquatic dolphin = new Dolphin(sex: Sex.Male, name: "Dolph", weight: 23, diet: Diet.Carnivore, isHungry: true, maxTimeUnderWater: 8, jumpingHeight: 4);
-        //    dolphin.Dive(10);
-        //    Assert.IsFalse((dolphin as Mammal).IsAlive);
-        //    Assert.ThrowsException<InvalidOperationException>(() => dolphin.Dive(10));
-        //}
+        [TestMethod]
+        public void DivingWithDeadIAquaticThrowsException()
+        {
+            IAquatic dolphin = new Dolphin(sex: Sex.Male, name: "Dolph", weight: 23, diet: Diet.Carnivore, isHungry: true, maxTimeUnderWater: 8, jumpingHeight: 4);
+            dolphin.Dive(10);
+            Assert.IsFalse((dolphin as Mammal).IsAlive);
+            Assert.ThrowsException<InvalidOperationException>(() => dolphin.Dive(10));
+        }
     }
 }
 /*

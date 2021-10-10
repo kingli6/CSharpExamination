@@ -13,7 +13,16 @@ namespace CSharpExamination.Methods.Mammals
             //if the object.maxTimeUnderWater is over numberOfMinutes
             //set object.IsAlive = false
             //else true;
-            aquatics.Select(i => i.maxTimeUnderWater > numberOfMinutes ? i.IsAlive = true : i.IsAlive = false);
+            foreach (var item in aquatics)
+            {
+                if (item.maxTimeUnderWater > numberOfMinutes)
+                {
+                    item.IsAlive = true;
+                }
+                else
+                    item.IsAlive = false;
+            }
+            //aquatics.Select(i => i.maxTimeUnderWater > numberOfMinutes ? i.IsAlive = true : i.IsAlive = false);
         }
     }
 }

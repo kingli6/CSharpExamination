@@ -16,5 +16,7 @@ namespace CSharpExamination.Methods.Mammals
         int maxTimeUnderWater { get; set; }
         int jumpingHeight { get; set; }
         bool IsAlive { get; set; }
+
+        void Dive(int dive);
     }
 }

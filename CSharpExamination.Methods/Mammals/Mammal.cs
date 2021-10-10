@@ -17,7 +17,35 @@ namespace CSharpExamination.Methods.Mammals
         public int maxTimeUnderWater { get; set; }
         public int jumpingHeight { get; set; }
         public bool IsAlive {get;set;}
+
+        public void Dive(int dive)
+        {
+            try
+            {
+                if (maxTimeUnderWater < dive)
+                {
+                    IsAlive = false;
+                }
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InvalidOperationException();
+            }
+            
+            
+        }
+        /*
          
+            //we need to check with the object
+            //object.maxtimeunderwater.... last method we passed a list with all the objects,
+            //  can we do the same here?
+            //how do we check with dolphin object    ((using IAquatic dolphin as type..
+            //if (dive == null || dive <= 0)
+            //{
+            //    throw new InvalidOperationException();
+            //}
+            
+         */
     }
 }
 //{ get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
